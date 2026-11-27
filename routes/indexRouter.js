@@ -22,11 +22,12 @@ indexRouter.get("/", (req, res) => {
   });
 });
 
-indexRouter.get("/:id", (req, res) => {
+indexRouter.get("/messages/:id", (req, res) => {
   const messageId = req.params.id;
-  console.log(messageId);
+  const message = messages[messageId - 1];
   res.render("message", {
-    message: messages[messageId - 1],
+    message: message,
+    title: `Message ${messageId}`,
   });
 });
 

@@ -5,14 +5,14 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Messages</h1>
     <%- include('navBar') -%>
+    <h1>Messages</h1>
     <% messages.forEach((message, index) => { %>
         <h2>Message <%= index + 1 %></h2>
         <p>Sender: <%= message.user %></p>
         <p>Message: <%= message.text %></p>
         <p>Time: <%= message.added %></p>
-        <a href="/<%= index + 1 %>">Open message</a>
+        <a href="/messages/<%= index + 1 %>">Open message</a>
     <%})%>
 </body>
 </html>
